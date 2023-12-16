@@ -29,11 +29,14 @@ class VehicleTest {
         Motorcycle motorcycle = new Motorcycle("Yamaha", "YZF-R1M", 2024);
         assertEquals(2, motorcycle.getNumWheels(), "У мотоцикла должно быть 2 колеса!");
     }
-    @Test
-    void testDrive() {
-    }
 
     @Test
-    void park() {
+    @DisplayName("проверка того, объект Car развивает скорость 60 в режиме тестового вождения (testDrive())")
+    void checkCarMethodTestDrive() {
+        Car car = new Car("Volvo", "XC90", 2016);
+        car.testDrive();
+        int testDriveSpeed = car.getSpeed();
+        assertEquals(60, testDriveSpeed, "В режиме тест-драйва скорость машины должна развивать 60");
     }
+
 }
