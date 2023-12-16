@@ -36,7 +36,33 @@ class VehicleTest {
         Car car = new Car("Volvo", "XC90", 2016);
         car.testDrive();
         int testDriveSpeed = car.getSpeed();
-        assertEquals(60, testDriveSpeed, "В режиме тест-драйва скорость машины должна развивать 60");
+        assertEquals(60, testDriveSpeed, "В режиме тест-драйва скорость машины должна быть 60");
     }
 
+    @Test
+    @DisplayName("проверка того, объект Motorcycle развивает скорость 75 в режиме тестового вождения (testDrive())")
+    void checkMotorcycleMethodTestDrive() {
+        Motorcycle motorcycle = new Motorcycle("Yamaha", "YZF-R1M", 2024);
+        motorcycle.testDrive();
+        int testDriveSpeed = motorcycle.getSpeed();
+        assertEquals(75, testDriveSpeed, "В режиме тест-драйва скорость мотоцикла должна быть 75");
+    }
+
+    @Test
+    @DisplayName("проверить, что в режиме парковки (сначала testDrive, потом park, т.е эмуляция движения транспорта) машина останавливается (speed = 0)")
+    void checkCarMethodPark() {
+        Car car = new Car("Volvo", "XC90", 2016);
+        car.testDrive();
+        car.park();
+        int speed = car.getSpeed();
+        assertEquals(0, speed, "В режиме парковки скорость машины должна быть 0");
+    }
+    @Test
+    @DisplayName("проверить, что в режиме парковки (сначала testDrive, потом park  т.е эмуляция движения транспорта) мотоцикл останавливается (speed = 0)")
+    void checkMotorcycleMethodPark() {
+        Motorcycle motorcycle = new Motorcycle("Yamaha", "YZF-R1M", 2024);
+        motorcycle.testDrive();
+        motorcycle.park();
+        assertEquals(0, motorcycle.getSpeed(), "В режиме парковки скорость мотоцикла должна быть 0");
+    }
 }
