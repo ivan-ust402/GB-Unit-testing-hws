@@ -6,6 +6,10 @@ public class Task2 {
     // и возвращает true, если попадает и false - если нет,
     // покрыть тестами метод на 100%
     public boolean numberInInterval(int n) {
-        return false;
+        if (n > 25 && n < 100) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
