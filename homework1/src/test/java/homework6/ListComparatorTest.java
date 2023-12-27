@@ -7,8 +7,6 @@ import java.util.Arrays;
 import java.util.List;
 
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -29,7 +27,7 @@ class ListComparatorTest {
     void init() {
         comparator = new ListComparator();
         list1 = Arrays.asList(1,2,3,4,5);
-        list2 = Arrays.asList(5,4,3,2,1);
+        list2 = Arrays.asList(1,2,3,4,5);
         list3 = Arrays.asList(1,1,1,1,1);
         list4 = Arrays.asList(9,9,9,9,9);
         list5 = new ArrayList<>();
